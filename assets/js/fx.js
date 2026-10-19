@@ -129,6 +129,7 @@ export function heroCourt(hero) {
   const rest = hero.querySelectorAll('[data-hero-fade]');
   if (!hasGsap || reduced) { ball && (ball.style.display = 'none'); shadow && (shadow.style.display = 'none'); return; }
 
+  gsap.set(court, { rotateX: 62, rotateZ: -14, scale: 1 }); // remplace la transformation CSS par des valeurs que GSAP connaît
   lines.forEach(p => { const l = p.getTotalLength ? p.getTotalLength() : 1000; p.style.strokeDasharray = l; p.style.strokeDashoffset = l; });
   const tl = gsap.timeline({ defaults: { ease: 'power4.out' } });
   tl.from(court, { rotateX: 80, rotateZ: -4, scale: .8, opacity: 0, duration: 1.6 })

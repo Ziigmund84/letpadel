@@ -28,7 +28,7 @@ img { max-width: 100%; display: block; }
 .login { min-height: 100vh; display: grid; place-items: center; padding: 24px; background: radial-gradient(120% 90% at 80% 0%, #2F5BD8, var(--blue) 45%, var(--night)); }
 .login-card { width: min(420px, 100%); background: #fff; border-radius: 22px; padding: 32px; box-shadow: 0 30px 80px -30px rgba(0,0,0,.5); }
 .login-logo { height: 68px; width: auto; margin: 0 auto 18px; }
-.login h1 { font-family: "Saira Extra Condensed", sans-serif; font-style: italic; text-transform: uppercase; font-size: 30px; text-align: center; margin-bottom: 22px; }
+.login h1 { font-family: "Saira", sans-serif; font-stretch: 62.5%; font-weight: 800; font-style: italic; text-transform: uppercase; font-size: 30px; text-align: center; margin-bottom: 22px; }
 .login-back { text-align: center; margin: 18px 0 0; font-size: 14px; }
 .stack { display: grid; gap: 14px; }
 .msg { margin: 0; font-weight: 600; font-size: 14px; }
@@ -61,7 +61,7 @@ input:focus, select:focus, textarea:focus { border-color: var(--blue); outline: 
 .side-foot .b { color: #fff; }
 .main { min-width: 0; }
 .topbar { position: sticky; top: 0; z-index: 5; display: flex; align-items: center; gap: 14px; padding: 14px 28px; background: rgba(242,244,250,.92); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
-.topbar h1 { font-family: "Saira Extra Condensed", sans-serif; font-style: italic; text-transform: uppercase; font-size: 28px; flex: 1; }
+.topbar h1 { font-family: "Saira", sans-serif; font-stretch: 62.5%; font-weight: 800; font-style: italic; text-transform: uppercase; font-size: 28px; flex: 1; }
 .menu-btn { display: none; }
 .view { padding: 24px 28px 80px; max-width: 1200px; }
 @media (max-width: 900px) {
@@ -88,7 +88,7 @@ input:focus, select:focus, textarea:focus { border-color: var(--blue); outline: 
 /* Tableau de bord */
 .stats { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 14px; margin-bottom: 18px; }
 .stat { background: #fff; border-radius: var(--r); padding: 18px; text-decoration: none; color: inherit; display: block; }
-.stat b { display: block; font-family: "Saira Extra Condensed", sans-serif; font-size: 40px; line-height: 1; color: var(--blue); }
+.stat b { display: block; font-family: "Saira", sans-serif; font-stretch: 62.5%; font-weight: 800; font-size: 40px; line-height: 1; color: var(--blue); }
 .stat:hover { box-shadow: inset 0 0 0 2px var(--blue); }
 
 /* Listes */
