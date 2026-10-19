@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Let Padel Club — Padel à Orléans, Saint-Pryvé & Fleury-les-Aubrais</title>
+  <meta name="description" content="Club de padel, badminton et pickleball à Saint-Pryvé-Saint-Mesmin et Fleury-les-Aubrais, aux portes d'Orléans. 8 pistes panoramiques, académie, club house. Ouvert 7j/7.">
+  <meta property="og:title" content="Let Padel Club — Padel à Orléans">
+  <meta property="og:description" content="Entre amis ou en famille, viens jouer ou apprendre à jouer au padel.">
+  <meta property="og:image" content="https://kdcflcvufukagdjycwww.supabase.co/storage/v1/object/public/letpadel-media/site/accueil/jouer-apprendre.jpg">
+  <meta name="theme-color" content="#1D3FA0">
+  <script>document.documentElement.classList.add('js')</script>
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://kdcflcvufukagdjycwww.supabase.co" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira:wght@400;500;600;700&family=Saira+Extra+Condensed:ital,wght@0,800;1,700;1,800&display=swap">
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script defer src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script type="module" src="assets/js/pages/home.js"></script>
+</head>
+<body data-page="home">
+  <div id="top"></div>
+
+  <main id="main">
+    <!-- Le court -->
+    <section class="hero" id="hero" aria-labelledby="heroTitle">
+      <div class="court-stage" aria-hidden="true"><div class="court" id="court"></div></div>
+      <div class="hero-ball-shadow" aria-hidden="true"></div>
+      <div class="hero-ball" aria-hidden="true" id="heroBall"></div>
+      <div class="wrap hero-content">
+        <p class="kicker light" data-hero-fade id="heroKicker">Padel, badminton et pickleball aux portes d'Orléans</p>
+        <h1 class="display hero-title" id="heroTitle">
+          <span class="line"><span class="outline">Entre amis ou en famille,</span></span>
+          <span class="line"><span>viens jouer au padel</span></span>
+        </h1>
+        <div class="hero-bottom" data-hero-fade>
+          <div>
+            <p class="hero-sub" id="heroSub">Deux clubs aux portes d'Orléans, 8 pistes panoramiques, une académie, un club house… et toujours la même énergie.</p>
+            <div class="hero-hours" id="heroHours"></div>
+          </div>
+          <div class="btn-row">
+            <a class="btn" data-link="booking" id="heroCta" href="https://letpadel.doinsport.club/home" target="_blank" rel="noopener">Je réserve une piste</a>
+            <a class="btn btn-ghost" id="heroCta2" href="club.html">Découvrir le club</a>
+          </div>
+        </div>
+      </div>
+      <div class="scroll-cue" aria-hidden="true"></div>
+    </section>
+
+    <div id="marquee"></div>
+
+    <!-- Intro -->
+    <section class="section" id="intro">
+      <div class="wrap split">
+        <div class="frame-deco"><div class="frame tall reveal-wipe" id="introImg"></div></div>
+        <div id="introText"><div class="skeleton"></div></div>
+      </div>
+    </section>
+
+    <!-- Jouer / Apprendre / Entreprise -->
+    <section class="section on-dark pillars" id="pillars" aria-labelledby="pillarsTitle">
+      <div class="pillars-track" id="pillarsTrack">
+        <div class="pillars-intro">
+          <p class="kicker">Trois façons de vivre le Let</p>
+          <h2 class="display h-l" id="pillarsTitle" data-reveal="words">Jouer, apprendre, fédérer</h2>
+          <p class="lead" style="margin-top:20px;color:rgba(255,255,255,.8)">Que vous veniez pour une partie entre amis, pour progresser avec un coach ou pour souder vos équipes, il y a une piste pour vous.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Les deux centres -->
+    <section class="net-split" id="centres" aria-label="Nos deux centres"></section>
+
+    <!-- Chiffres & horaires -->
+    <section class="section" id="chiffres">
+      <div class="wrap split">
+        <div>
+          <p class="kicker">Quand venir jouer ?</p>
+          <h2 class="display h-l" data-reveal="words">Ouvert tous les jours, dans nos deux clubs</h2>
+          <div class="hours-band" id="hoursBand" style="margin-top:32px"></div>
+          <p class="muted" id="hoursNote" style="margin-top:14px"></p>
+        </div>
+        <div class="scoreboard" data-reveal="up" aria-label="Le Let Padel en chiffres">
+          <div class="scoreboard-head"><span>Let Padel Club</span><span class="live">En direct des pistes</span></div>
+          <div class="score-grid" id="scoreGrid"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Premier match -->
+    <section class="section on-white" id="premier-match">
+      <div class="wrap">
+        <div class="sec-head split">
+          <div>
+            <p class="kicker" id="firstKicker">Premier match ?</p>
+            <h2 class="display h-l" data-reveal="words" id="firstTitle">Ton premier match en 3 étapes</h2>
+          </div>
+          <p class="lead muted">Pas besoin d'avoir déjà tenu une raquette : le padel se prend en main en quelques échanges.</p>
+        </div>
+        <div class="steps" id="steps"></div>
+      </div>
+    </section>
+
+    <!-- Restaurant -->
+    <section class="section" id="restaurant" style="background:var(--cream)">
+      <div class="wrap split reverse">
+        <div class="frame-deco"><div class="frame square reveal-wipe" id="restoImg"></div></div>
+        <div id="restoText"><div class="skeleton"></div></div>
+      </div>
+    </section>
+
+    <!-- Actualités -->
+    <section class="section" id="actus">
+      <div class="wrap">
+        <div class="sec-head split">
+          <div>
+            <p class="kicker">Actualités</p>
+            <h2 class="display h-l" data-reveal="words">Ça bouge au Let</h2>
+          </div>
+          <p><a class="link-arrow" href="actualites.html">Toutes les actualités</a></p>
+        </div>
+        <div class="news-grid" id="news"><div class="skeleton"></div><div class="skeleton"></div></div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section on-dark" id="faq">
+      <div class="wrap split" style="align-items:start">
+        <div>
+          <p class="kicker">Vos questions, nos réponses</p>
+          <h2 class="display h-l" data-reveal="words">Tout savoir avant de venir</h2>
+          <p style="margin-top:24px"><a class="link-arrow" href="contact.html">Une autre question ? Écrivez-nous</a></p>
+        </div>
+        <div class="faq" id="faqList"></div>
+      </div>
+    </section>
+
+    <div id="cta"></div>
+  </main>
+
+  <div id="bottom"></div>
+</body>
+</html>
