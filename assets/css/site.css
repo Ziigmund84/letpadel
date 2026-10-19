@@ -95,8 +95,8 @@ h1, h2, h3, h4 { margin: 0; font-weight: 800; line-height: .95; }
   background: var(--orange);
   box-shadow: inset -2px -2px 0 rgba(0,0,0,.18);
 }
-.on-dark .kicker, .kicker.light { color: #FFB194; }
-.on-dark .kicker::before, .kicker.light::before { background: var(--ball); }
+.on-dark .kicker, .on-blue .kicker, .kicker.light { color: #FFB194; }
+.on-dark .kicker::before, .on-blue .kicker::before, .kicker.light::before { background: var(--ball); }
 .prose { max-width: 62ch; }
 .prose ul { padding-left: 1.1em; margin: 0 0 1em; }
 .prose li { margin: .35em 0; }
