@@ -586,6 +586,14 @@ dialog.sheet[open] { animation: sheet-in .5s var(--ease); }
 .split-word { display: inline-block; overflow: hidden; vertical-align: top; padding-right: .06em; margin-right: -.06em; padding-bottom: .06em; margin-bottom: -.06em; }
 .split-word > span { display: inline-block; will-change: transform; }
 
+.program { display: grid; grid-template-columns: 120px 1fr; gap: 24px; align-items: start; }
+@media (max-width: 560px) { .program { grid-template-columns: 1fr; } .program .frame { width: 96px; } }
+
+/* ---------- Sommaire de page ---------- */
+.page-nav { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.page-nav a { display: inline-block; text-decoration: none; font-weight: 600; padding: 8px 16px; border-radius: 999px; background: #fff; box-shadow: inset 0 0 0 1px var(--line); transition: background .25s, color .25s; }
+.page-nav a:hover { background: var(--blue); color: #fff; }
+
 /* ---------- Divers ---------- */
 .skeleton { background: linear-gradient(90deg, rgba(12,26,71,.06), rgba(12,26,71,.12), rgba(12,26,71,.06)); background-size: 200% 100%; animation: sk 1.2s infinite linear; border-radius: var(--radius-m); min-height: 120px; }
 @keyframes sk { to { background-position: -200% 0; } }

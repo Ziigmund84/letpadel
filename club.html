@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Notre histoire — Let Padel Club</title>
+  <meta name="description" content="Né de plus de 20 ans d'expérience dans le sport, Let Padel est un lieu moderne, accessible et convivial : 8 pistes panoramiques, 2 terrains de badminton / pickleball et un club house.">
+  <meta name="theme-color" content="#1D3FA0">
+  <script>document.documentElement.classList.add('js')</script>
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://kdcflcvufukagdjycwww.supabase.co" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira:wght@400;500;600;700&family=Saira+Extra+Condensed:ital,wght@0,800;1,700;1,800&display=swap">
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script defer src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script type="module" src="assets/js/pages/club.js"></script>
+</head>
+<body data-page="club">
+  <div id="top"></div>
+  <main id="main">
+    <section class="page-hero">
+      <div class="bg"><img src="https://kdcflcvufukagdjycwww.supabase.co/storage/v1/object/public/letpadel-media/site/accueil_slider/image_1-1.jpg" alt="" data-parallax="16"></div>
+      <div class="wrap">
+        <nav class="crumbs" aria-label="Fil d'Ariane"><a href="index.html">Accueil</a><span aria-hidden="true">/</span><span>Le club</span></nav>
+        <p class="kicker light">Notre histoire</p>
+        <h1 class="display" data-reveal="words">Plus qu'un club, un lieu de partage autour du sport</h1>
+        <div class="lead"></div>
+      </div>
+    </section>
+
+    <section class="section" id="histoire">
+      <div class="wrap split" id="story"><div class="skeleton"></div></div>
+    </section>
+
+    <div id="clubMarquee"></div>
+
+    <section class="section on-dark" id="infrastructures">
+      <div class="wrap">
+        <div class="sec-head split" id="infraHead"></div>
+        <div class="grid grid-3" id="infra" data-stagger></div>
+      </div>
+    </section>
+
+    <section class="section" id="chiffres">
+      <div class="wrap">
+        <div class="scoreboard" data-reveal="up" aria-label="Le Let Padel en chiffres">
+          <div class="scoreboard-head"><span>Let Padel Club</span><span class="live">En direct des pistes</span></div>
+          <div class="score-grid" id="scoreGrid"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section on-white" id="club-house">
+      <div class="wrap">
+        <div class="sec-head split" id="chHead"></div>
+        <div class="grid grid-3" id="clubhouse" data-stagger></div>
+      </div>
+    </section>
+
+    <section class="section" id="galerie">
+      <div class="wrap">
+        <div class="sec-head">
+          <p class="kicker">Galerie</p>
+          <h2 class="display h-l" data-reveal="words">La vie du club</h2>
+        </div>
+        <div class="gallery" id="gallery"></div>
+      </div>
+    </section>
+
+    <div id="cta"></div>
+  </main>
+  <div id="bottom"></div>
+</body>
+</html>

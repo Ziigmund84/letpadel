@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>L'Académie — Let Padel Club</title>
+  <meta name="description" content="Cours de padel jeunes (5-17 ans) et adultes, cours particuliers, stages vacances et centre d'entraînement avec les coachs diplômés du Let Padel, à Saint-Pryvé et Fleury-les-Aubrais.">
+  <meta name="theme-color" content="#1D3FA0">
+  <script>document.documentElement.classList.add('js')</script>
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://kdcflcvufukagdjycwww.supabase.co" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira:wght@400;500;600;700&family=Saira+Extra+Condensed:ital,wght@0,800;1,700;1,800&display=swap">
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script defer src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script type="module" src="assets/js/pages/academie.js"></script>
+</head>
+<body data-page="academie">
+  <div id="top"></div>
+  <main id="main">
+    <section class="page-hero">
+      <div class="wrap">
+        <nav class="crumbs" aria-label="Fil d'Ariane"><a href="index.html">Accueil</a><span aria-hidden="true">/</span><span>Académie</span></nav>
+        <p class="kicker light">L'Académie</p>
+        <h1 class="display" data-reveal="words">Progressez avec la méthode Let Padel</h1>
+        <div class="lead">Jeunes, adultes, débutants ou compétiteurs : des cours encadrés par nos coachs diplômés, sur nos deux centres.</div>
+        <div class="btn-row" style="margin-top:28px">
+          <a class="btn" href="#programmes">Voir les cours</a>
+          <a class="btn btn-ghost" id="brochure" href="#" target="_blank" rel="noopener">Brochure 2026-2027 (PDF)</a>
+        </div>
+      </div>
+    </section>
+
+    <nav class="wrap" aria-label="Dans cette page" style="margin-top:28px">
+      <ul class="page-nav">
+        <li><a href="#decouvrir">Découvrir</a></li>
+        <li><a href="#programmes">Jeunes & adultes</a></li>
+        <li><a href="#cours">Cours ponctuels</a></li>
+        <li><a href="#stages">Stages</a></li>
+        <li><a href="#entrainement">Centre d'entraînement</a></li>
+        <li><a href="#coachs">Nos coachs</a></li>
+      </ul>
+    </nav>
+
+    <section class="section" id="decouvrir">
+      <div class="wrap split" id="discover"><div class="skeleton"></div></div>
+    </section>
+
+    <section class="section on-dark" id="programmes">
+      <div class="wrap">
+        <div class="sec-head">
+          <p class="kicker">L'Académie Let Padel</p>
+          <h2 class="display h-l" data-reveal="words">Une saison pour progresser</h2>
+        </div>
+        <div class="grid grid-2" id="programs"></div>
+      </div>
+    </section>
+
+    <section class="section on-white" id="cycles">
+      <div class="wrap">
+        <div class="sec-head split">
+          <div>
+            <p class="kicker">Calendrier adultes</p>
+            <h2 class="display h-l" data-reveal="words">5 cycles de 6 semaines</h2>
+          </div>
+          <p class="lead muted">Chaque cycle est indépendant : vous pouvez démarrer en cours d'année, sans engagement à l'année.</p>
+        </div>
+        <div class="cycles" id="cycleList"><div class="progress"></div></div>
+      </div>
+    </section>
+
+    <section class="section" id="cours">
+      <div class="wrap">
+        <div class="sec-head split">
+          <div>
+            <p class="kicker">Cours individuel / collectif</p>
+            <h2 class="display h-l" data-reveal="words">Cours à la carte</h2>
+          </div>
+          <p class="lead muted">Une heure avec un coach, seul ou à plusieurs. Plus vous êtes nombreux, plus le prix par personne baisse.</p>
+        </div>
+        <div class="lesson-strip" id="lessons" data-stagger></div>
+      </div>
+    </section>
+
+    <section class="section on-blue" id="stages">
+      <div class="wrap" id="stageList"></div>
+    </section>
+
+    <section class="section" id="entrainement">
+      <div class="wrap split reverse" id="training"></div>
+    </section>
+
+    <section class="section on-white" id="coachs">
+      <div class="wrap">
+        <div class="sec-head split">
+          <div>
+            <p class="kicker">Nos coachs</p>
+            <h2 class="display h-l" data-reveal="words">L'équipe sur la piste</h2>
+          </div>
+          <p class="lead muted">Des professionnels expérimentés, animés par la même ambition : vous accompagner concrètement vers vos objectifs.</p>
+        </div>
+        <div id="coachList"></div>
+      </div>
+    </section>
+
+    <section class="section on-dark">
+      <div class="wrap split" style="align-items:start">
+        <div>
+          <p class="kicker">Vos questions</p>
+          <h2 class="display h-l" data-reveal="words">Prendre des cours</h2>
+        </div>
+        <div class="faq" id="faqList"></div>
+      </div>
+    </section>
+
+    <div id="cta"></div>
+  </main>
+  <div id="bottom"></div>
+</body>
+</html>

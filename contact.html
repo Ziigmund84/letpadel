@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact & accès — Let Padel Club</title>
+  <meta name="description" content="Contactez le Let Padel : formulaire, téléphone, adresses et plans d'accès de nos centres de Saint-Pryvé-Saint-Mesmin et Fleury-les-Aubrais. Questions fréquentes.">
+  <meta name="theme-color" content="#1D3FA0">
+  <script>document.documentElement.classList.add('js')</script>
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://kdcflcvufukagdjycwww.supabase.co" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira:wght@400;500;600;700&family=Saira+Extra+Condensed:ital,wght@0,800;1,700;1,800&display=swap">
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script defer src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script type="module" src="assets/js/pages/contact.js"></script>
+</head>
+<body data-page="contact">
+  <div id="top"></div>
+  <main id="main">
+    <section class="page-hero plain">
+      <div class="wrap">
+        <nav class="crumbs" aria-label="Fil d'Ariane"><a href="index.html">Accueil</a><span aria-hidden="true">/</span><span>Contact</span></nav>
+        <p class="kicker light">Contact</p>
+        <h1 class="display" data-reveal="words">Une question ? On vous répond</h1>
+        <div class="lead">Académie, stages, entreprise, vie du club : écrivez-nous, l'équipe vous répond rapidement.</div>
+      </div>
+    </section>
+
+    <section class="section" id="formulaire">
+      <div class="wrap split" style="align-items:start">
+        <div>
+          <p class="kicker">Nous écrire</p>
+          <h2 class="display h-l" data-reveal="words">Envoyez-nous un message</h2>
+          <form class="form" id="contactForm" novalidate style="margin-top:28px">
+            <div class="row">
+              <div class="field"><label for="f-name">Nom et prénom</label><input id="f-name" name="name" autocomplete="name" required maxlength="120"></div>
+              <div class="field"><label for="f-email">E-mail</label><input id="f-email" name="email" type="email" autocomplete="email" required maxlength="200"></div>
+            </div>
+            <div class="row">
+              <div class="field"><label for="f-phone">Téléphone <span class="muted">(facultatif)</span></label><input id="f-phone" name="phone" type="tel" autocomplete="tel" maxlength="40"></div>
+              <div class="field"><label for="f-center">Centre</label><select id="f-center" name="center"><option value="">Peu importe</option></select></div>
+            </div>
+            <div class="field"><label for="f-subject">Sujet</label>
+              <select id="f-subject" name="subject" required>
+                <option value="">Choisissez votre sujet</option>
+                <option value="academie">M'inscrire à l'Académie (saison 2026-2027)</option>
+                <option value="stages">Recevoir des informations sur les stages</option>
+                <option value="entreprise">Me renseigner sur l'offre Entreprise</option>
+                <option value="club">Recevoir des informations sur la vie du club</option>
+                <option value="autre">Autre</option>
+              </select>
+            </div>
+            <div class="field"><label for="f-msg">Message</label><textarea id="f-msg" name="message" required maxlength="5000"></textarea></div>
+            <div class="hp" aria-hidden="true"><label for="f-web">Ne pas remplir</label><input id="f-web" name="website" tabindex="-1" autocomplete="off"></div>
+            <p class="muted" style="font-size:.88rem;margin:0">Vos données servent uniquement à vous répondre. <a href="mentions-legales.html">Mentions légales</a></p>
+            <div id="formMsg" role="status" aria-live="polite"></div>
+            <div><button class="btn" type="submit">Envoyer le message</button></div>
+          </form>
+        </div>
+        <div id="contactCenters" style="display:grid;gap:22px"></div>
+      </div>
+    </section>
+
+    <section class="section on-dark" id="faq">
+      <div class="wrap split" style="align-items:start">
+        <div>
+          <p class="kicker">Questions fréquentes</p>
+          <h2 class="display h-l" data-reveal="words">Nous avons sûrement la réponse</h2>
+          <p class="lead" style="margin-top:20px;color:rgba(255,255,255,.8)">Réservations, activités, événements et vie du club : les réponses aux questions qu'on nous pose le plus.</p>
+        </div>
+        <div class="faq" id="faqList"></div>
+      </div>
+    </section>
+  </main>
+  <div id="bottom"></div>
+</body>
+</html>
