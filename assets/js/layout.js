@@ -36,8 +36,8 @@ export function header(page, g = FALLBACK) {
   <header class="site-header" id="siteHeader">
     <div class="wrap header-in">
       <a class="brand" href="index.html" aria-label="Let Padel Club — accueil">
-        <img class="logo-color" src="${esc(g.logo)}" alt="Let Padel Club" width="106" height="52">
-        <img class="logo-white" src="${esc(g.logo_white)}" alt="" width="106" height="52">
+        <img class="logo-color" src="${esc(g.logo)}" alt="Let Padel Club">
+        <img class="logo-white" src="${esc(g.logo_white)}" alt="">
       </a>
       <nav class="nav" aria-label="Navigation principale"><ul>${items}</ul></nav>
       <div class="header-cta">
@@ -72,7 +72,7 @@ export function footer(g = {}, cs = []) {
     <div class="wrap">
       <div class="footer-grid">
         <div>
-          <img class="footer-logo" src="${esc(g.logo_white || FALLBACK.logo_white)}" alt="Let Padel Club" width="143" height="70">
+          <div class="footer-brand"><img class="footer-logo" src="${esc(g.logo_white || FALLBACK.logo_white)}" alt="Let Padel Club"></div>
           <p>${esc(g.description || '')}</p>
           <div class="socials">
             ${g.instagram ? `<a href="${esc(g.instagram)}" target="_blank" rel="noopener" aria-label="Instagram">${ICON.ig}</a>` : ''}
@@ -103,6 +103,36 @@ export function footer(g = {}, cs = []) {
     </div>
   </footer>`;
 }
+
+// Les logos SVG du club ont une grande marge transparente : on mesure la partie visible
+// et on la recadre pour que le logo occupe vraiment la hauteur voulue.
+const cropCache = new Map();
+async function bounds(src) {
+  if (cropCache.has(src)) return cropCache.get(src);
+  const p = (async () => {
+    const img = new Image(); img.crossOrigin = 'anonymous'; img.src = src;
+    await img.decode();
+    const S = 300, c = document.createElement('canvas'); c.width = c.height = S;
+    const ratio = img.naturalWidth / img.naturalHeight || 1;
+    const w = ratio >= 1 ? S : S * ratio, h = ratio >= 1 ? S / ratio : S;
+    const x = c.getContext('2d', { willReadFrequently: true }); x.drawImage(img, 0, 0, w, h);
+    const d = x.getImageData(0, 0, Math.ceil(w), Math.ceil(h)).data, W = Math.ceil(w);
+    let x0 = W, y0 = h, x1 = 0, y1 = 0;
+    for (let y = 0; y < Math.ceil(h); y++) for (let i = 0; i < W; i++) if (d[(y * W + i) * 4 + 3] > 8) { if (i < x0) x0 = i; if (i > x1) x1 = i; if (y < y0) y0 = y; if (y > y1) y1 = y; }
+    if (x1 <= x0) return null;
+    return { l: x0 / w, t: y0 / h, cw: (x1 - x0 + 1) / w, ch: (y1 - y0 + 1) / h, ratio };
+  })().catch(() => null);
+  cropCache.set(src, p);
+  return p;
+}
+export async function cropLogo(img) {
+  const target = parseFloat(getComputedStyle(img).height) || 52;
+  const b = await bounds(img.src);
+  if (!b || b.ch > .9) return;
+  const fullH = target / b.ch, fullW = fullH * b.ratio;
+  Object.assign(img.style, { height: fullH + 'px', width: fullW + 'px', maxWidth: 'none', marginTop: -(b.t * fullH) + 'px', marginBottom: -((1 - b.t - b.ch) * fullH) + 'px', marginLeft: -(b.l * fullW) + 'px', marginRight: -((1 - b.l - b.cw) * fullW) + 'px' });
+}
+const cropAll = () => document.querySelectorAll('.brand img, .footer-logo').forEach(i => cropLogo(i));
 
 function announce(a) {
   const el = document.getElementById('announce');
@@ -148,12 +178,15 @@ export async function mountLayout(page) {
   const bottom = document.getElementById('bottom');
   if (top) top.outerHTML = header(page);
   behaviour();
+  cropAll();
   try {
     const [s, cs] = await Promise.all([settings(), centers()]);
     const g = s.general || {};
     document.querySelectorAll('[data-link="booking"]').forEach(a => g.booking_url && (a.href = g.booking_url));
     document.querySelectorAll('[data-link="tournaments"]').forEach(a => g.tournaments_url && (a.href = g.tournaments_url));
     if (bottom) bottom.outerHTML = footer(g, cs);
+    if (g.logo || g.logo_white) document.querySelectorAll('.brand .logo-color, .brand .logo-white').forEach(i => { const u = i.classList.contains('logo-white') ? g.logo_white : g.logo; if (u && i.src !== u) i.src = u; });
+    cropAll();
     announce(s.announce);
     return { s, cs, g };
   } catch (e) {
